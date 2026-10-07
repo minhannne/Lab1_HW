@@ -13,15 +13,15 @@
   `fix(nav): keyboard trap prevention`
 
 ## M3 — Content Security Policy
-- [ ] Configure a strict Content Security Policy.
-- [ ] Ensure there are no inline event handlers such as onclick.
-- [ ] Review the results and commit:
+- [x] Configure a strict Content Security Policy.
+- [x] Ensure there are no inline event handlers such as onclick.
+- [x] Review the results and commit:
   `fix(security): strict CSP & remove inline handlers`
 
 ## M4 — Lighthouse
-- [ ] Run a Lighthouse audit.
-- [ ] Optimize assets to achieve the required score of 100.
-- [ ] Review the results and commit:
+- [x] Run a Lighthouse audit.
+- [x] Optimize assets to achieve the required score of 100.
+- [x] Review the results and commit:
   `perf: optimize assets`
 
 ## M1 — Test Results
@@ -50,3 +50,16 @@
 - Stylesheets and images are allowed only from the same origin.
 - style.css returned HTTP 304 and the page remained styled correctly.
 - Chrome DevTools' automatic workspace request was blocked by CSP.
+- No inline event handlers were found in the reviewed HTML.
+## M4 — Test Results
+- Lighthouse mode: Navigation.
+- Device: Mobile.
+- Tested at http://127.0.0.1:8000/index.html.
+- Performance: 100/100.
+- Accessibility: 100/100.
+- Best Practices: 100/100.
+- SEO: 100/100.
+- Added a valid robots.txt file.
+- Added connect-src 'self' to allow same-origin requests.
+- JavaScript remains blocked by script-src 'none'.
+- Performance was already 100 before these changes.
