@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Hub</title>
     <script src="countdown.js" defer></script>
+    <script src="form.js" defer></script>
 </head>
 <body>
     <main>
@@ -21,6 +22,41 @@
             </p>
             <p id="countdown">Đang tải đồng hồ đếm ngược...</p>
         </section>
+        <section aria-labelledby="registration-title">
+    <h2 id="registration-title">Đăng ký tham gia</h2>
+
+    <form id="registration-form">
+        <p>
+            <label for="full-name">Họ và tên</label>
+            <input
+                type="text"
+                id="full-name"
+                name="fullName"
+                autocomplete="name"
+                maxlength="100"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                maxlength="254"
+                required
+            >
+        </p>
+
+        <button type="submit" id="submit-button">
+            Đăng ký
+        </button>
+
+        <p id="form-status" role="status" aria-live="polite"></p>
+    </form>
+</section>
     </main>
 </body>
 </html>
