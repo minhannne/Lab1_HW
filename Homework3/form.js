@@ -17,6 +17,9 @@ function renderState(state, message = "") {
     const isSubmitting = state === STATES.SUBMITTING;
 
     submitButton.disabled = isSubmitting;
+    form.querySelectorAll("input").forEach((input) => {
+    input.disabled = isSubmitting;
+});
     submitButton.textContent = isSubmitting
         ? "Đang gửi..."
         : "Đăng ký";
@@ -64,6 +67,7 @@ emailInput.value = email;
 renderState(STATES.SUBMITTING, "Đang xử lý đăng ký...");
 
     try {
+
         await simulateRegistration();
 
         renderState(

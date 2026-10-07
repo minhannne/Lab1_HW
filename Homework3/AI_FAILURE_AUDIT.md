@@ -25,3 +25,30 @@ field, and return before starting the submission.
 ### Verification
 Repeated the same whitespace-only name test after the fix.
 The form displayed a validation error and did not start submission.
+## Defect 2: Edits during submission were erased
+
+### 1. Defect Description
+The AI-generated code disabled the submit button but left the
+input fields editable during submission. Users could change their
+details while waiting, but the success handler then called
+`form.reset()`, erasing those new edits.
+
+### 2. Diagnostic Method
+Code review identified that only the submit button was disabled.
+A browser test confirmed the defect:
+
+1. Enter a valid name and email.
+2. Submit the form.
+3. Change the name while the form displays "Đang gửi...".
+4. Wait for the success message.
+
+The newly entered name was erased when the form reset.
+
+### 3. Refactored Solution
+Update `renderState()` to disable all input fields during
+SUBMITTING and enable them again when submission finishes.
+
+### Verification
+Repeated the browser test after the fix.
+The fields could not be edited during submission.
+After success, both fields became editable again.
