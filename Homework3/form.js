@@ -83,3 +83,11 @@ renderState(STATES.SUBMITTING, "Đang xử lý đăng ký...");
         );
     }
 });
+form.addEventListener("input", () => {
+    if (
+        currentState === STATES.SUCCESS ||
+        currentState === STATES.ERROR
+    ) {
+        renderState(STATES.IDLE);
+    }
+});
