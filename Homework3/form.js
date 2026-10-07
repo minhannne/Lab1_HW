@@ -39,10 +39,29 @@ form.addEventListener("submit", async (event) => {
     }
 
     if (!form.reportValidity()) {
-        return;
-    }
+    return;
+}
 
-    renderState(STATES.SUBMITTING, "Đang xử lý đăng ký...");
+const nameInput = document.getElementById("full-name");
+const emailInput = document.getElementById("email");
+
+const fullName = nameInput.value.trim();
+const email = emailInput.value.trim();
+
+if (fullName.length === 0) {
+    renderState(
+        STATES.ERROR,
+        "Vui lòng nhập họ tên, không được chỉ chứa khoảng trắng."
+    );
+
+    nameInput.focus();
+    return;
+}
+
+nameInput.value = fullName;
+emailInput.value = email;
+
+renderState(STATES.SUBMITTING, "Đang xử lý đăng ký...");
 
     try {
         await simulateRegistration();
