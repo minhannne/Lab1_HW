@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drum Kit</title>
-    <script src="audio-engine.js" defer></script>
+   <script src="audio-engine.js" defer></script>
+<script src="beat-recorder.js" defer></script>
 <script src="app.js" defer></script>
 </head>
 <body>
@@ -27,6 +28,16 @@
         <audio data-sound="kick" src="sounds/kick.wav" preload="auto"></audio>
         <audio data-sound="snare" src="sounds/snare.wav" preload="auto"></audio>
         <audio data-sound="hihat" src="sounds/hihat.wav" preload="auto"></audio>
+        <section aria-labelledby="recorder-title">
+    <h2 id="recorder-title">Beat Recorder</h2>
+
+    <button id="record-btn" type="button">Start Recording</button>
+    <button id="stop-btn" type="button" disabled>Stop Recording</button>
+    <button id="play-btn" type="button" disabled>Play Recording</button>
+
+    <p id="record-status" role="status">Ready to record.</p>
+    <ol id="beat-list" aria-label="Recorded beats"></ol>
+</section>
     </main>
 </body>
 </html>
