@@ -52,3 +52,28 @@ SUBMITTING and enable them again when submission finishes.
 Repeated the browser test after the fix.
 The fields could not be edited during submission.
 After success, both fields became editable again.
+## Defect 3: Stale result message during a new registration
+
+### 1. Defect Description
+The AI-generated form did not return to IDLE when the user
+started editing after SUCCESS or ERROR. The previous result
+message remained visible while the user entered new details.
+
+### 2. Diagnostic Method
+Code review identified the missing input-event handler.
+A browser test confirmed the defect:
+
+1. Complete a successful registration.
+2. Enter a new name without submitting again.
+3. Observe the status message.
+
+The previous success message remained visible.
+
+### 3. Refactored Solution
+Add an input-event listener to the form.
+When the current state is SUCCESS or ERROR, call
+`renderState(STATES.IDLE)` to clear the previous message.
+
+### Verification
+Completed a successful registration and entered a new name.
+The previous success message disappeared when typing began.
