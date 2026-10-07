@@ -44,3 +44,9 @@
 - Enter activates the Projects link and navigates to its section.
 - Focus can leave the page links and return without becoming trapped.
 - No keyboard traps were found in the current page.
+## M3 — Test Results
+- A restrictive CSP is configured using a meta tag.
+- JavaScript is blocked by script-src 'none'.
+- Stylesheets and images are allowed only from the same origin.
+- style.css returned HTTP 304 and the page remained styled correctly.
+- Chrome DevTools' automatic workspace request was blocked by CSP.
