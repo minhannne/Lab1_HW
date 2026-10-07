@@ -1,15 +1,15 @@
 # HW1 — Production Portfolio
 
 ## M1 — Accessibility
-- [ ] Audit accessibility against WCAG 2.2 AA.
+- [x] Audit accessibility against WCAG 2.2 AA.
 - [x] Improve text contrast and HTML landmarks.
-- [ ] Review the results and commit:
+- [x] Review the results and commit:
   `fix(a11y): contrast & landmarks`
 
 ## M2 — Keyboard Navigation
-- [ ] Test keyboard navigation.
-- [ ] Ensure users can navigate without keyboard traps.
-- [ ] Review the results and commit:
+- [x] Test keyboard navigation.
+- [x] Ensure users can navigate without keyboard traps.
+- [x] Review the results and commit:
   `fix(nav): keyboard trap prevention`
 
 ## M3 — Content Security Policy
@@ -37,3 +37,10 @@
 - Lighthouse Accessibility score: 100/100.
 - Tested at http://127.0.0.1:8000/index.html.
 - Full WCAG 2.2 AA compliance has not yet been verified.
+## M2 — Test Results
+- Tab selects the skip link, About, Projects, and Contact in order.
+- Shift + Tab navigates in reverse order.
+- All focused links have a visible focus indicator.
+- Enter activates the Projects link and navigates to its section.
+- Focus can leave the page links and return without becoming trapped.
+- No keyboard traps were found in the current page.
