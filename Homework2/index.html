@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+</head>
+<body>
+    <main>
+        <h1>Drum Kit</h1>
+        <p>Press A, S, or D to play a drum sound.</p>
+
+        <section aria-label="Drum pads">
+            <button type="button" data-key="a" data-sound="kick">
+                A — Kick
+            </button>
+            <button type="button" data-key="s" data-sound="snare">
+                S — Snare
+            </button>
+            <button type="button" data-key="d" data-sound="hihat">
+                D — Hi-hat
+            </button>
+        </section>
+
+        <audio data-sound="kick" src="sounds/kick.wav" preload="auto"></audio>
+        <audio data-sound="snare" src="sounds/snare.wav" preload="auto"></audio>
+        <audio data-sound="hihat" src="sounds/hihat.wav" preload="auto"></audio>
+    </main>
+</body>
+</html>
